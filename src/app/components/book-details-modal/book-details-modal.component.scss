@@ -1,0 +1,20 @@
+ion-label{
+  height: 52px;
+}
+
+ion-datetime{
+  padding-left: 0px;
+}
+
+input{
+  width: -webkit-fill-available;
+  border: none;
+}
+
+.required{
+  border:1px solid red;
+}
+
+ion-datetime {
+  min-height: fit-content;
+}

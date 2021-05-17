@@ -1,0 +1,26 @@
+<ion-header no-padding>
+  <ion-toolbar>
+    <ion-title class="no-padding" style="padding-right: 16px;">Books</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addBook()" >
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar [(ngModel)]="searchTerm" placeholder="Enter book title" (ionChange)="filterBooks()" ></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <div class="list-group" id="list-tab" role="tablist"><!--Bootstrap list css-->
+    <ul class="list-group" *ngFor="let book of filteredBooks">
+      <li class="list-group-item d-flex justify-content-between align-items-center" style="height: 118px;">
+        <img src="{{book.thumbnailUrl}}" height="100" width="100" #myImage [hidden]="myImage.isBugged" (error)="myImage.isBugged = true"><!--If image url is bugged-> don't display it.-->
+        {{book.title}}, {{book.author}}
+        <span class="badge badge-primary badge-pill"></span>
+        <div class="buttons-div">
+          <button (click)="getBookDetails(book)" >Details</button>
+          <button (click)="removeBook(book)" >Remove</button>
+        </div>
+    </ul>
+  </div>
+</ion-content>

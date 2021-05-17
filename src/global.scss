@@ -24,3 +24,62 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+ion-toolbar {
+  --background: #eb445a;
+  color: white;
+}
+
+ion-header {
+  --background: white;
+}
+
+ion-buttons > ion-button {
+  --background-hover: transparent !important;
+  --background-activate: transparent !important;
+  --background-focused: transparent !important;
+}
+
+//// Must , Otherwise creating a conflict bootstrap-ionic
+.modal {
+  display: flex !important;
+}
+
+.item-interactive {
+  --highlight-background: purple !important;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid deeppink;
+}
+
+ion-header {
+  ion-button {
+    font-size: 28px !important;
+    color: white !important;
+  }
+}
+
+ion-label {
+  --color: grey !important;
+}
+
+.header-md::after { //ion-header remove shadow
+  width: 0px;
+}
+
+.details-modal{
+  --min-height: 440px;
+  --height: auto;
+  --width: 300px !important;
+}
+
