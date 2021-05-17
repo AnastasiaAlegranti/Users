@@ -14,7 +14,7 @@
   <div class="list-group" id="list-tab" role="tablist"><!--Bootstrap list css-->
     <ul class="list-group" *ngFor="let book of filteredBooks">
       <li class="list-group-item d-flex justify-content-between align-items-center" style="height: 118px;">
-        <img src="{{book.thumbnailUrl}}" height="100" width="100" #myImage [hidden]="myImage.isBugged" (error)="myImage.isBugged = true"><!--If image url is bugged-> don't display it.-->
+        <img src="{{book.thumbnailUrl}}" height="100" width="100">
         {{book.title}}, {{book.author}}
         <span class="badge badge-primary badge-pill"></span>
         <div class="buttons-div">
