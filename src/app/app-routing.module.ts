@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {UsersComponent} from './components/users/users.component';
 
 const routes: Routes = [
-  // {
-  //   path: 'home'
-  // , component: BooksComponent
-  // },
+  {
+    path: 'users'
+  , component: UsersComponent
+  },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'users',
     pathMatch: 'full'
   },
 ];

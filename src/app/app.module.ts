@@ -5,26 +5,27 @@ import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {AppRoutingModule} from './app-routing.module';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import {AppComponent} from "./components/app/app.component";
+import {AppComponent} from './components/app/app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {UsersComponent} from './components/users/users.component';
+import {UserDetailsComponent} from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsersComponent,
+    UserDetailsComponent
   ],
-  entryComponents: [],
-  imports: [BrowserModule,
-    IonicModule.forRoot({scrollPadding: true, scrollAssist: false, mode: 'md'}), // mode:'md'- style android style///// _forceStatusbarPadding: true,
+  entryComponents: [
+    UserDetailsComponent
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({scrollPadding: true, scrollAssist: false, mode: 'md'}), // mode:'md'- style android style
     AppRoutingModule,
     CommonModule,
     FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
+    HttpClientModule,
   ],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],

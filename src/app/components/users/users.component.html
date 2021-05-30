@@ -1,0 +1,13 @@
+<ion-header no-padding>
+  <ion-toolbar>
+    <ion-title>Users</ion-title>
+  </ion-toolbar>
+  <ion-searchbar [(ngModel)]="searchTerm" placeholder="Enter user name" (ionChange)="filterUsers()" ></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let user of filteredUsers" (click)="displayUsersDetails(user)">
+    <h5>{{user.name}}</h5>
+    <p>{{user.email}}</p>
+  </div>
+</ion-content>
